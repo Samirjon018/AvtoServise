@@ -1,0 +1,66 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+enum BookingStatus {
+  NEW
+  CONFIRMED
+  IN_PROGRESS
+  DONE
+  CANCELLED
+}
+
+model Service {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String?
+  price       Int
+  durationMin Int
+  isActive    Boolean   @default(true)
+  bookings    Booking[]
+}
+
+model Bay {
+  id        Int       @id @default(autoincrement())
+  name      String
+  openTime  String    @default("09:00")
+  closeTime String    @default("18:00")
+  isActive  Boolean   @default(true)
+  bookings  Booking[]
+}
+
+model Booking {
+  id           Int           @id @default(autoincrement())
+  customerName String
+  phone        String
+  carBrand     String
+  carModel     String
+  plateNumber  String
+  note         String?
+  startAt      DateTime
+  endAt        DateTime
+  status       BookingStatus @default(NEW)
+  createdAt    DateTime      @default(now())
+
+  serviceId Int
+  service   Service @relation(fields: [serviceId], references: [id])
+  bayId     Int
+  bay       Bay     @relation(fields: [bayId], references: [id])
+
+  @@index([bayId, startAt, endAt])
+}
+
+model Admin {
+  id           Int    @id @default(autoincrement())
+  login        String @unique
+  passwordHash String
+}
