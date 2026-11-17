@@ -1,4 +1,5 @@
-﻿import { prisma } from "../../../lib/prisma";
+﻿import { notifyTelegram, esc } from "../../../lib/telegram";
+import { prisma } from "../../../lib/prisma";
 
 const TZ = "+05:00";
 
@@ -90,6 +91,25 @@ export async function POST(request: Request) {
       { status: 409 }
     );
   }
+
+    const when = booking.startAt.toLocaleString("en-GB", {
+    timeZone: "Asia/Tashkent",
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
+  await notifyTelegram(
+    `🚗 <b>Yangi bron #${booking.id}</b>\n` +
+      `🔧 ${esc(booking.service.name)}\n` +
+      `🕒 ${when} (${esc(booking.bay.name)})\n` +
+      `👤 ${esc(booking.customerName)}\n` +
+      `📞 ${esc(booking.phone)}\n` +
+      `🚙 ${esc(booking.carBrand)} ${esc(booking.carModel)}, ${esc(booking.plateNumber)}` +
+      (booking.note ? `\n📝 ${esc(booking.note)}` : "")
+  );
 
   return Response.json({ booking }, { status: 201 });
 }
