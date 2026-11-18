@@ -1,3 +1,13 @@
+<p align="left">
+  <a href="https://github.com/Samirjon018">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=36BCF7&width=435&lines=AvtoServise+WebSite;Passionate+about+UI%2FBackend;Techs+TypeScriptg+%26+Building" alt="Typing SVG" />
+  </a>
+</p>
+
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
