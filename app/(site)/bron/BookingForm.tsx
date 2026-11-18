@@ -90,8 +90,8 @@ export default function BookingForm({ services }: { services: Service[] }) {
               onClick={() => pickService(s.id)}
               className={`flex items-center justify-between rounded-lg border px-4 py-3 text-left ${
                 serviceId === s.id
-                  ? "border-blue-600 bg-blue-600 text-white"
-                  : "border-gray-300 hover:border-blue-500"
+                  ? "border-orange-500 bg-orange-500 text-white"
+                  : "border-gray-300 hover:border-orange-500"
               }`}
             >
               <span>
@@ -132,8 +132,8 @@ export default function BookingForm({ services }: { services: Service[] }) {
                   onClick={() => setTime(s.time)}
                   className={`rounded-lg border px-2 py-2 text-sm ${
                     time === s.time
-                      ? "border-blue-600 bg-blue-600 text-white"
-                      : "border-gray-300 hover:border-blue-500"
+                      ? "border-orange-500 bg-orange-500 text-white"
+                      : "border-gray-300 hover:border-orange-500"
                   }`}
                 >
                   {s.time}
@@ -162,7 +162,7 @@ export default function BookingForm({ services }: { services: Service[] }) {
           <textarea placeholder="Izoh (ixtiyoriy)" rows={2} className={input}
             value={form.note} onChange={(e) => setField("note", e.target.value)} />
           <button type="submit"
-            className="w-full rounded-lg bg-blue-600 px-4 py-3 font-semibold text-white hover:bg-blue-700">
+            className="w-full rounded-lg bg-orange-500 px-4 py-3 font-semibold text-white hover:bg-orange-600">
             Bron qilish
           </button>
         </form>
@@ -178,3 +178,4 @@ export default function BookingForm({ services }: { services: Service[] }) {
     </div>
   );
 }
+
