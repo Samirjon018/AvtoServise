@@ -1,6 +1,6 @@
 <p align="left">
   <a href="https://github.com/Samirjon018">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=36BCF7&width=435&lines=AvtoServise+WebSite;Passionate+about+UI%2FBackend;Techs+TypeScriptg+%26+Building" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=36BCF7&width=435&lines=AvtoServise+WebSite;Passionate+about+Frontend%2FBackend;Techs+TypeScript+%26+JavaScript" alt="Typing SVG" />
   </a>
 </p>
 
