@@ -6,7 +6,9 @@
   address: "Manzilingizni shu yerga yozing",
   hours: "Har kuni 09:00–18:00",
   telegram: "https://t.me/",
-};
+  telegramLabel: "@avtoservis",
+  mapEmbed: "",
+};  
 
 export const nav = [
   { href: "/", label: "Bosh sahifa" },

@@ -28,9 +28,9 @@ async function Booking() {
 export default function BronPage() {
   return (
     <section className="mx-auto max-w-2xl px-4 py-10">
-      <h1 className="text-3xl font-bold">Navbat olish</h1>
-      <p className="mt-1 opacity-70">Xizmat va qulay vaqtni tanlang</p>
-      <Suspense fallback={<p className="mt-8 opacity-70">Yuklanmoqda...</p>}>
+      <h1 className="font-display text-5xl font-extrabold">Navbat olish</h1>
+      <p className="mt-2 text-steel">Xizmat va qulay vaqtni tanlang.</p>
+      <Suspense fallback={<p className="mt-8 text-steel">Yuklanmoqda...</p>}>
         <Booking />
       </Suspense>
     </section>

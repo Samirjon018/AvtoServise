@@ -1,11 +1,19 @@
 ﻿@import "tailwindcss";
 
-:root {
-  color-scheme: dark;
+@theme {
+  --color-floor: #eceff1;
+  --color-paper: #ffffff;
+  --color-ink: #13202b;
+  --color-steel: #5b6b78;
+  --color-line: #cfd6db;
+  --color-panel: #162a38;
+  --color-signal: #ffc800;
+  --font-display: var(--font-barlow-condensed), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-barlow), Arial, sans-serif;
 }
 
 body {
-  background: #0a0a0a;
-  color: #ededed;
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-floor);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
 }
