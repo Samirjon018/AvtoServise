@@ -57,7 +57,12 @@ async function Dashboard({
   return (
     <>
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Bronlar</h1>
+       <div className="flex items-center gap-4">
+  <h1 className="text-2xl font-bold">Bronlar</h1>
+  <Link href="/admin/services" className="text-blue-600 underline">
+    Xizmatlar va narxlar
+  </Link>
+</div>
         <form action={logout}>
           <button className="rounded-lg border border-gray-300 px-3 py-2 text-sm">
             Chiqish

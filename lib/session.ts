@@ -1,11 +1,11 @@
-﻿import { SignJWT, jwtVerify } from "jose";
+import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 
 const COOKIE = "admin_session";
 
 function key() {
-  const s = process.env.SESSION_SECRET;
-  if (!s || s.length < 32) throw new Error("SESSION_SECRET .env da topilmadi");
+  const s = process.env.ADMIN_SESSION_SECRET;
+  if (!s || s.length < 32) throw new Error("ADMIN_SESSION_SECRET .env da topilmadi");
   return new TextEncoder().encode(s);
 }
 

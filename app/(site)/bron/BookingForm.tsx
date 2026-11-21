@@ -10,7 +10,13 @@ const input =
 
 const money = (n: number) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
-export default function BookingForm({ services }: { services: Service[] }) {
+export default function BookingForm({
+  services,
+  initialServiceId = null,
+}: {
+  services: Service[];
+  initialServiceId?: number | null;
+}) {
   const [serviceId, setServiceId] = useState<number | null>(null);
   const [date, setDate] = useState("");
   const [slots, setSlots] = useState<Slot[]>([]);
